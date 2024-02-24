@@ -10,8 +10,15 @@ COPY package*.json ./
 RUN yarn install
 
 # Copy the rest of the files
-COPY . .
+COPY public/ public/
+COPY src/ src/
+COPY babel.config.js .
+COPY vue.config.js .
+COPY jsconfig.json .
+COPY yarn.lock .
 
 FROM build-stage AS development-stage
+
+USER node
 
 CMD ["yarn", "serve"]
