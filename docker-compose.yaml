@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: app/front
+    ports:
+      - "8080:8080"
+    volumes:
+      - /app/front:/app/front
+      - /app/front/node_modules
+    environment:
+      - NODE_ENV=development
