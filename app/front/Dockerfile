@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install the dependencies
-RUN yarn install
+RUN yarn install --ignore-scripts
 
 # Copy the rest of the files
 COPY public/ public/
